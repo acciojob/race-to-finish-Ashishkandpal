@@ -21,7 +21,7 @@ for (let i = 0; i < 5; i++) {
 }
 
 const any = async () => {
-  const first = await Promise.any(...promises);
+  const first = await Promise.any(promises.map(val => val));
   output.innerText = first;
   return first;
 };
