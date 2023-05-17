@@ -16,8 +16,12 @@ const task = async () => {
   return randomNum;
 };
 
+for (let i = 0; i < 5; i++) {
+	promises.push(task());
+}
+
 const any = async () => {
-  const first = await Promise.any([task(), task(), task(), task(), task()]);
+  const first = await Promise.any(...promises);
   output.innerText = first;
   return first;
 };
